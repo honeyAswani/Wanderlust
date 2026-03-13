@@ -22,6 +22,7 @@ const userRouter = require("./routes/user.js");
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set("trust proxy", 1);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.engine('ejs',ejsMate); 
@@ -105,6 +106,8 @@ app.use((err,req,res,next)=>{
 });
 
 
-app.listen(8080, () =>{
-    console.log('Server is listening to port 8080');
-})
+const port = process.env.PORT || 8080;
+
+app.listen(port, ()=>{
+    console.log(`Server running on port ${port}`);
+});
