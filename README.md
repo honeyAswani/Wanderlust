@@ -63,5 +63,3 @@ https://wanderlust-0gvs.onrender.com
 
 
 
-Example:
-
